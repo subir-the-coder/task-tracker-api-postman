@@ -5,6 +5,8 @@
 ![Postman](https://img.shields.io/badge/Tested%20With-Postman-orange)
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue)
 ![License](https://img.shields.io/badge/License-Educational-lightgrey)
+[![Certification](https://img.shields.io/badge/Certification-Verified-success)](https://verify.skilljar.com/c/ztcrv87xe36k)
+
 
 ## Overview
 Task Tracker API is a lightweight mock REST API designed to help developers practice and demonstrate basic CRUD (Create, Read, Update, Delete) operations. It’s perfect for learning API fundamentals, testing frontend integrations, and prototyping task-based workflows without any complex setup.
