@@ -13,6 +13,11 @@ Task Tracker API is a lightweight mock REST API designed to help developers prac
 
 This project is implemented as a Postman collection, making it easy to explore and test endpoints instantly.
 
+## Certification
+This project is supported by a verified certification:  
+🔗 https://verify.skilljar.com/c/ztcrv87xe36k
+
+
 ## Features
 - CRUD operations for tasks
 - Fetch user data
