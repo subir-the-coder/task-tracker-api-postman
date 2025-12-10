@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "429a93d1-60b2-46ef-ba06-0eaedfaad023",
+		"name": "Task Tracker API",
+		"description": "# Task Tracker API Documentation\n\n## Overview\nThe Task Tracker API is a mock API designed to help developers test and demonstrate Create, Read, Update, and Delete (CRUD) operations for a simple task management system. It allows you to manage tasks and users, making it ideal for prototyping, frontend development, and learning API workflows.\n\n**Base URL:** `{{baseURL}}`\n\n## Authentication\nThis mock API does not require authentication. All endpoints are publicly accessible for testing purposes.\n\n## Endpoints\n\n### 1. Get All Tasks\n- **Endpoint:** `GET /tasks`\n- **Description:** Retrieve a list of all tasks.\n- **Request Example:**\n  ```http\n  GET {{baseURL}}/tasks\n  ```\n- **Response Example:**\n  ```json\n  [\n    {\n      \"id\": 1,\n      \"title\": \"Update Jira tickets\",\n      \"completed\": false\n    }\n  ]\n  ```\n- **Status Codes:**\n  - 200 OK: Success\n\n### 2. Get All Users\n- **Endpoint:** `GET /users`\n- **Description:** Retrieve a list of all users.\n- **Request Example:**\n  ```http\n  GET {{baseURL}}/users\n  ```\n- **Response Example:**\n  ```json\n  [\n    {\n      \"id\": 1,\n      \"name\": \"John Doe\"\n    }\n  ]\n  ```\n- **Status Codes:**\n  - 200 OK: Success\n\n### 3. Create New Task\n- **Endpoint:** `POST /tasks`\n- **Description:** Create a new task.\n- **Request Example:**\n  ```http\n  POST {{baseURL}}/tasks\n  Content-Type: application/json\n\n  {\n    \"title\": \"Write documentation\",\n    \"completed\": false\n  }\n  ```\n- **Response Example:**\n  ```json\n  {\n    \"id\": 2,\n    \"title\": \"Write documentation\",\n    \"completed\": false\n  }\n  ```\n- **Status Codes:**\n  - 201 Created: Task created\n\n### 4. Update Task\n- **Endpoint:** `PUT /tasks/:id`\n- **Description:** Update an existing task by ID.\n- **Request Example:**\n  ```http\n  PUT {{baseURL}}/tasks/1\n  Content-Type: application/json\n\n  {\n    \"title\": \"Update Jira tickets\",\n    \"completed\": true\n  }\n  ```\n- **Response Example:**\n  ```json\n  {\n    \"id\": 1,\n    \"title\": \"Update Jira tickets\",\n    \"completed\": true\n  }\n  ```\n- **Status Codes:**\n  - 200 OK: Task updated\n\n### 5. Delete Task\n- **Endpoint:** `DELETE /tasks/:id`\n- **Description:** Delete a task by ID.\n- **Request Example:**\n  ```http\n  DELETE {{baseURL}}/tasks/1\n  ```\n- **Response Example:**\n  ```json\n  {\n    \"message\": \"Task deleted successfully\"\n  }\n  ```\n- **Status Codes:**\n  - 204 No Content: Task deleted\n\n## Usage Instructions\n1. Set the `baseURL` environment variable to the mock server URL or your API server.\n2. Use the provided endpoints to perform CRUD operations on tasks and retrieve users.\n3. No authentication is required.\n\n---\nFor further details, refer to the [Task Tracker API collection](collection/48957267-429a93d1-60b2-46ef-ba06-0eaedfaad023).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48957267",
+		"_collection_link": "https://subirthecoder35-1830748.postman.co/workspace/Task-Tracker~f3d86a86-33db-4a50-bd00-7bc1d55a257a/collection/48957267-429a93d1-60b2-46ef-ba06-0eaedfaad023?action=share&source=collection_link&creator=48957267"
+	},
+	"item": [
+		{
+			"name": "GET All Tasks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/tasks",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/tasks",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n  {\r\n    \"id\": 1,\r\n    \"title\": \"Update Jira tickets\",\r\n    \"completed\": false\r\n  }\r\n]\r\n   "
+				}
+			]
+		},
+		{
+			"name": "GET All Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/users",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"id\":1;\r\n        \"Name\":\"Raj\";\r\n        \"Role\":\"Assistant Manager\";\r\n        \"isActive\": true\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "POST New Task",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Ponder Existence\",\r\n    \"completed\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/tasks",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"New Task\",\r\n  \"completed\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/tasks",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"id\": 2,\r\n  \"title\": \"New Task\",\r\n  \"completed\": false\r\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT Update Tasks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "1"
+				},
+				"url": {
+					"raw": "{{baseURL}}/tasks/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Updated Task\",\r\n  \"completed\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/tasks/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"id\": 1,\r\n  \"title\": \"Updated Task\",\r\n  \"completed\": true\r\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE Remove Tasks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/tasks/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "204",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/tasks/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
